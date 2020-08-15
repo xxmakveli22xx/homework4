@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+
+    <title>Game</title>
 </head>
 <body>
-    <nav> 
-        <a href="higscore.html"> view highscores</a>
-    </nav>
-       <div>description</div>
-       <button>Start Game</button>
-       <div id="main"></div>
-
     
+     
+      <div class="container">
+          <div id="questions-contanier " class="hide">
+             <div id="questions" class="text-center">This is a game of random shark questions.</div>
+             <div id="answer-buttons" class="btn-grid">
+                 <button class="btn">Answer 1</button>
+                 <button class="btn">Answer 2</button>
+                 <button class="btn">Answer 3</button>
+                 <button class="btn">Answer 4</button>
+
+             </div>
+          </div>
+
+          <div class = "controls">
+              <button id="start-btn" class="start-btn btn">Start</button>
+              <button id="next-btn" class="next-btn btn hide">Next</button>
+          </div>
+
+      </div>
+    
+      
 </body>
 <script src="javascrip.js"></script>
 </html>
