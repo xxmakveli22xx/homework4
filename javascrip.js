@@ -24,24 +24,22 @@ var questions = [
 var questionArray = Object.values(questions);
 var questionKey = Object.keys(questions);
 
-var startEl = document.getElementsByName('start-btn');
+var startEl = document.getElementById("start-btn");
+var questionEl = document.getElementById("questions");
 
 startEl.addEventListener('click', startGame);
   
-    
-
-
-
+  
 function startGame(){
   console.log("inside the start button");
-   
+  startEl.classList.add("hide");
+  startQuestions(); 
   
 
 };
-startGame();
 
 function startQuestions(){
-   
+   questionEl.textContent.questionArray;
+   console.log("inside questions");
 
-
-}
+};
