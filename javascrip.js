@@ -1,8 +1,8 @@
 var questions = [
   {
-      question: 'Who was the artist of the year in 2019? ',
-      answerChoices: ['Billie Ellish', 'Ariana Grande', 'Drake', 'Elton John'],
-      correctAnswer: 'Billie Ellish',
+      question: 'How long have sharks been alive? ',
+      answerChoices: ['30 years', '100 years', '500 years', 'Since Before Dinosaurs'],
+      correctAnswer: 'Since Before Dinosaurs',
   },
 
   {
@@ -19,14 +19,15 @@ var questions = [
   },
     
 ]
-//this array will keep th
-//var questionArray = [ questions, questions2, questions3];
-var questionArray = Object.values(questions);
-var questionKey = Object.keys(questions);
+
 
 var startEl = document.getElementById("start-btn");
-var questionEl = document.getElementById("questions");
-var questionConEl = document.getElementById("questions-contanier");
+var mainEl = document.getElementById("main");
+var questEl = document.createElement("h1");
+var questionConEl = document.getElementById("questions");
+
+
+
 
 //this will track which question the game is on
 var questionTracker = 0;
@@ -35,35 +36,57 @@ startEl.addEventListener('click', startGame);
   
   //this function will start the game
 function startGame(){
-  console.log("inside the start button");
+  
   startEl.classList.add("hide");
-  startQuestions(); 
+ // startQuestions(); 
   printAnswers();
 
 };
-
+  
 //this function will print the questions to the screen
 
 function startQuestions(){
-   questionConEl.classList.remove("hide");
-   questionEl.innerHTML = questions[questionTracker].question;
-   append
+
    console.log("inside questions");
 
 };
 
 function printAnswers(){
-console.log("starting the array ");
-for(var i =0;i < questionArray.length; i++){
-  console.log(questionKey[i]);
-  console.log("in the loop");
-}
+  questionConEl.classList.remove("hide");
+  questionConEl.innerText= questions[questionTracker].question;
+  questEl.append(questionConEl);
+
+  for(var i =0; i < questions[questionTracker].answerChoices.length; i++){
+    var choiceEl =document.createElement("button");
+    choiceEl.classList.add('btn')
+   
+    console.log("in the loop");
+    choiceEl.addEventListener('click', function(){
+    var answerSelected = this.textContent;
+       
+    if(answerSelected === questions[questionTracker].correctAnswer){
+          console.log("Congradulations you are Correct!!!!");
+           questionTracker++;
+         }else{
+           console.log("Sorry you are incorrect");
+       }
+      
+      
+    });
+    
+
+    choiceEl.textContent = questions[questionTracker].answerChoices[i];
+    questEl.append(choiceEl);
+  
+  }
+  
+
+
+
+
+
+
  
 
- /* for (var i = 0; i < .length; i++) {
-    var btn = document.createElement("answer-buttons");
-    var t = document.textcontent(listBrand[i]);
-    btn.appendChild(t);
-    document.body.appendChild(btn);
-*/
 }
+
